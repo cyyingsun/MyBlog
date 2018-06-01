@@ -35,12 +35,12 @@
             <div class="meta-item meta-copyright">
                 <div class="meta-copyright-info">
                     <div class="info-text">
-                        <a href="http://blog.hanshuai.xin" style="display: block;margin: 0 auto;" class="info-logo">
+                        <a th:href="${commons.site_url('/')}" style="display: block;margin: 0 auto;" class="info-logo">
                             <img style="display: block;margin: 0 auto;" th:src="@{/user/img/logo.png}"
                                  th:alt="${commons.site_title()}"/>
                         </a>
                         <br/>
-                        <p>&copy; 版权所有 <a href="https://github.com/ZHENFENG13/My-Blog" target="_blank"
+                        <p>&copy; 版权所有 <a th:href="${commons.site_url('/firefly/1')}" target="_blank"
                                           rel="nofollow">颖火虫</a> 保留一切权利
                             <br/>
                             <a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP17054782号</a>

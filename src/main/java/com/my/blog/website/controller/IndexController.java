@@ -75,13 +75,70 @@ public class IndexController extends BaseController {
      */
     @GetMapping(value = "page/{p}")
     public String index(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
+//        p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
+//        PageInfo<ContentVo> articles = contentService.getContents(p, limit);
+//        request.setAttribute("articles", articles);
+//        if (p > 1) {
+//            this.title(request, "第" + p + "页");
+//        }
+        return this.render("index");
+    }
+
+    /**
+     * 颖火虫首页分页
+     *
+     * @param request request
+     * @param p       第几页
+     * @param limit   每页大小
+     * @return 主页
+     */
+    @GetMapping(value = "firefly/{p}")
+    public String firefly(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
         p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
         PageInfo<ContentVo> articles = contentService.getContents(p, limit);
         request.setAttribute("articles", articles);
         if (p > 1) {
             this.title(request, "第" + p + "页");
         }
-        return this.render("index");
+        return this.render("LightIndex");
+    }
+
+    /**
+     * 茗薇美术首页分页
+     *
+     * @param request request
+     * @param p       第几页
+     * @param limit   每页大小
+     * @return 主页
+     */
+    @GetMapping(value = "minwei/{p}")
+    public String minwei(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
+        p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
+        PageInfo<ContentVo> articles = contentService.getContents(p, limit);
+        request.setAttribute("articles", articles);
+        if (p > 1) {
+            this.title(request, "第" + p + "页");
+        }
+        return this.render("MinWeiIndex");
+    }
+
+    /**
+     * 设计首页分页
+     *
+     * @param request request
+     * @param p       第几页
+     * @param limit   每页大小
+     * @return 主页
+     */
+    @GetMapping(value = "vismin/{p}")
+    public String vismin(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
+        p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
+        PageInfo<ContentVo> articles = contentService.getContents(p, limit);
+        request.setAttribute("articles", articles);
+        if (p > 1) {
+            this.title(request, "第" + p + "页");
+        }
+        return this.render("VisminIndex");
     }
 
     /**
