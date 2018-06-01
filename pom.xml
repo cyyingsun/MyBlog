@@ -42,6 +42,12 @@
             <version>1.2.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <!-- 为了打包成war添加的-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
