@@ -29,6 +29,15 @@ public interface IContentService {
      */
     PageInfo<ContentVo> getContents(Integer p, Integer limit);
 
+    /**
+     *查询文章返回多条数据
+     * @param p 当前页
+     * @param limit 每页条数
+     * @className 大类名称
+     * @return ContentVo
+     */
+    PageInfo<ContentVo> getContents(Integer p, Integer limit,String className);
+
 
     /**
      * 根据id或slug获取文章

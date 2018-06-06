@@ -86,6 +86,19 @@ public class ContentVo implements Serializable {
      */
     private String content;
 
+    /**
+     * 大分类
+     */
+    private String bigClass;
+
+    public String getBigClass() {
+        return bigClass;
+    }
+
+    public void setBigClass(String bigClass) {
+        this.bigClass = bigClass;
+    }
+
     private static final long serialVersionUID = 1L;
 
     public Integer getCid() {

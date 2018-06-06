@@ -269,6 +269,11 @@ public class ContentVoExample {
             return (Criteria) this;
         }
 
+        public Criteria andClassEqualTo(String value) {
+            addCriterion("big_class =", value, "big_class");
+            return (Criteria) this;
+        }
+
         public Criteria andSlugNotEqualTo(String value) {
             addCriterion("slug <>", value, "slug");
             return (Criteria) this;

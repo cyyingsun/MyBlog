@@ -148,13 +148,13 @@
       type, status, tags, 
       categories, hits, comments_num, 
       allow_comment, allow_ping, allow_feed, 
-      content)
+      content,big_class)
     values (#{cid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{slug,jdbcType=VARCHAR}, 
       #{created,jdbcType=INTEGER}, #{modified,jdbcType=INTEGER}, #{authorId,jdbcType=INTEGER}, 
       #{type,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{tags,jdbcType=VARCHAR}, 
       #{categories,jdbcType=VARCHAR}, #{hits,jdbcType=INTEGER}, #{commentsNum,jdbcType=INTEGER}, 
       #{allowComment,jdbcType=BIT}, #{allowPing,jdbcType=BIT}, #{allowFeed,jdbcType=BIT}, 
-      #{content,jdbcType=LONGVARCHAR})
+      #{content,jdbcType=LONGVARCHAR},#{bigClass,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.my.blog.website.modal.Vo.ContentVo" useGeneratedKeys="true" keyProperty="cid">
     insert into t_contents
@@ -411,6 +411,9 @@
       </if>
       <if test="content != null">
         content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="bigClass != null">
+        big_class = #{bigClass,jdbcType=VARCHAR},
       </if>
     </set>
     where cid = #{cid,jdbcType=INTEGER}

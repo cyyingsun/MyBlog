@@ -56,6 +56,9 @@
                             <input type="hidden" name="allowFeed"
                                    th:value="${contents!=null and contents.allowFeed !=null}?${contents.allowFeed}: true"
                                    id="allow_feed"/>
+                            <input type="hidden" name="bigClass"
+                                   th:value="${contents!=null and contents.bigClass !=null}?${contents.bigClass}: 'minwei'"
+                                   id="big_class"/>
                             <input type="hidden" name="content" id="content-editor"/>
 
                             <div class="form-group col-md-6" style="padding: 0 10px 0 0;">
@@ -120,6 +123,18 @@
                                          onclick="allow_feed(this);"></div>
                                 </div>
                             </div>
+
+                            <div class="form-group col-md-3 col-sm-4">
+                                <label class="col-sm-4">文章大类</label>
+                                <div class="col-sm-8">
+                                    <select id="multiple-class" class="select2 form-control" >
+                                        <option th:value="minwei" th:text="茗薇美术"  th:selected="${contents!=null and 'minwei'==contents.bigClass}?true:false"></option>
+                                        <option th:value="cyy" th:text="颖火虫" th:selected="${(contents==null) or (contents!=null and 'cyy'==contents.bigClass)}?true:false"></option>
+                                        <option th:value="vismin" th:text="设计" th:selected="${ contents!=null and 'vismin'==contents.bigClass}?true:false"></option>
+                                    </select>
+                                </div>
+                            </div>
+
 
                             <div class="clearfix"></div>
 

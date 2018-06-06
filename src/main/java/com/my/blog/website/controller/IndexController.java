@@ -95,7 +95,7 @@ public class IndexController extends BaseController {
     @GetMapping(value = "firefly/{p}")
     public String firefly(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
         p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
-        PageInfo<ContentVo> articles = contentService.getContents(p, limit);
+        PageInfo<ContentVo> articles = contentService.getContents(p, limit,"cyy");
         request.setAttribute("articles", articles);
         if (p > 1) {
             this.title(request, "第" + p + "页");
@@ -114,7 +114,7 @@ public class IndexController extends BaseController {
     @GetMapping(value = "minwei/{p}")
     public String minwei(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
         p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
-        PageInfo<ContentVo> articles = contentService.getContents(p, limit);
+        PageInfo<ContentVo> articles = contentService.getContents(p, limit,"minwei");
         request.setAttribute("articles", articles);
         if (p > 1) {
             this.title(request, "第" + p + "页");
@@ -133,7 +133,7 @@ public class IndexController extends BaseController {
     @GetMapping(value = "vismin/{p}")
     public String vismin(HttpServletRequest request, @PathVariable int p, @RequestParam(value = "limit", defaultValue = "12") int limit) {
         p = p < 0 || p > WebConst.MAX_PAGE ? 1 : p;
-        PageInfo<ContentVo> articles = contentService.getContents(p, limit);
+        PageInfo<ContentVo> articles = contentService.getContents(p, limit,"vismin");
         request.setAttribute("articles", articles);
         if (p > 1) {
             this.title(request, "第" + p + "页");
